@@ -35,10 +35,14 @@ public class UserService {
 		}
 	}
 
-	public void saveUser(User user) {
+	public void saveUser(User user) throws Exception {
 		user.setEmail(user.getUsername());
 		user.setPassword(DigestUtils.md5Hex(user.getPassword()));
-		userMapper.insertSelective(user);
+		if (user.getValidate().equals(redis.get("validate"))) {
+			userMapper.insertSelective(user);
+		} else {
+			throw new Exception("验证码错误");
+		}
 
 	}
 
@@ -57,7 +61,7 @@ public class UserService {
 
 			redis.set(ticket, userJson);
 			return ticket;
-			
+
 		}
 		return "";
 	}

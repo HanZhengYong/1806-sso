@@ -16,6 +16,13 @@ public class User extends BasePojo{
 	private String password;
 	private String phone;
 	private String email;
+	private String validate;
+	public String getValidate() {
+		return validate;
+	}
+	public void setValidate(String validate) {
+		this.validate = validate;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -27,5 +27,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="src/lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
